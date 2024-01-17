@@ -12,6 +12,13 @@ function App() {
     setSelectedCard(cardNumber);
   }
 
+  const cardTitles = [
+    "Url Query Check/Report",
+    "Phone No. Query/Report",
+    "Feedback/Suggestions from User",
+    "Recent Cyber Crimes"
+  ];
+
   return (
     <div className="app-container">
       <div className="App-header">
@@ -19,19 +26,19 @@ function App() {
       </div>
 
       <div className="main-content-wrapper">
-        {[1, 2, 3, 4].map((cardNumber) => (
+        {cardTitles.map((title, index) => (
           <Card 
-            key={cardNumber} 
-            title={`Card ${cardNumber}`} 
-            content={`Content for card ${cardNumber}`} 
-            className={selectedCard === cardNumber ? 'main-card' : 'side-card'}
-            onClick={() => handleCardSelect(cardNumber)}
-            selected={selectedCard === cardNumber}
+            key={index} 
+            title={title} 
+            content={`Content for ${title}`} 
+            className={selectedCard === index ? 'main-card' : 'side-card'}
+            onClick={() => handleCardSelect(index)}
+            selected={selectedCard === index}
           />
         ))}
 
         <Card 
-          title="Main Card" 
+          title="Home" 
           content="This is the main card." 
           className={selectedCard === null ? 'main-card' : 'side-card'} 
           onClick={() => handleCardSelect(null)}
