@@ -1,16 +1,16 @@
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-dark" style={{ width: '100%' }}>
+    <Navbar expand="lg" className="navbar-dark bg-dark" style={{ width: '100%' }}>
       <Container fluid>
         <Navbar.Brand href="#" style={{ fontSize: '80%' }}>
-          Navbar scroll
+          Suraksha Kavach
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -35,7 +35,7 @@ function NavScrollExample() {
               Link
             </Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -43,7 +43,7 @@ function NavScrollExample() {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

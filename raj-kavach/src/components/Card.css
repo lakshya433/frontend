@@ -6,7 +6,8 @@
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Align content vertically center */
+  justify-content: center;
+  overflow: hidden; /* Hide overflow content */
 }
 
 .card:hover {
@@ -14,28 +15,31 @@
 }
 
 .card.selected {
-  border: 2px solid blue; /* Highlight for selected card */
+  border: 2px solid blue;
 }
 
 .card-header {
   font-size: 1.25rem;
   font-weight: bold;
   transition: transform 0.3s ease-in-out;
-  align-self: center; /* Center the title */
+  align-self: center;
 }
 
 .card-header.rotate-left {
-  /* Rotate the title -90 degrees to the left */
   transform: rotate(-90deg);
-  transform-origin: center; /* Ensure rotation is around the center */
+  transform-origin: center;
 }
 
 .card-body {
   font-size: 1rem;
-  display: block; /* Make sure the content is visible when selected */
+  display: none; /* Hide content by default */
 }
 
-/* New theme styles */
+.card.selected .card-body,
+.side-card.selected .card-body {
+  display: block; /* Show content when card is selected */
+}
+
 .notification {
   display: flex;
   flex-direction: column;
@@ -52,7 +56,8 @@
   --color: #32a6ff;
 }
 
-.notification:before {
+.notification:before,
+.notification:after {
   position: absolute;
   content: "";
   inset: 0.0625rem;
@@ -62,8 +67,6 @@
 }
 
 .notification:after {
-  position: absolute;
-  content: "";
   width: 0.25rem;
   inset: 0.65rem auto 0.65rem 0.5rem;
   border-radius: 0.125rem;
@@ -113,9 +116,6 @@
   );
   opacity: 0;
   transition: opacity 300ms ease;
-}
-
-.notiglow {
   z-index: 3;
 }
 
@@ -123,21 +123,15 @@
   z-index: 1;
 }
 
-.notification:hover .notiglow {
-  opacity: 0.1;
-}
-
+.notification:hover .notiglow,
 .notification:hover .notiborderglow {
   opacity: 0.1;
 }
 
-.note {
-  color: var(--color);
-  position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-size: 0.9rem;
-  width: 75%;
+/* Additional styling for home cards */
+.home-card {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
 }
+
+/* Additional global styles, if any */

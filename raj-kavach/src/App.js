@@ -39,7 +39,7 @@ function App() {
 
         <Card 
           title="Home" 
-          content="This is the main card." 
+          content="Suraksha Kavach, your reliable shield against online threats. In an era where online scams and phishing attempts are rampant, Suraksha Kavach is here to equip users like you with the tools and knowledge needed to identify and steer clear of deceptive websites." 
           className={selectedCard === null ? 'main-card' : 'side-card'} 
           onClick={() => handleCardSelect(null)}
           selected={selectedCard === null}
