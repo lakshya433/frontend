@@ -1,0 +1,36 @@
+.card {
+  border: 1px solid #ddd;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align content vertically center */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card.selected {
+  border: 2px solid blue; /* Highlight for selected card */
+}
+
+.card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+  align-self: center; /* Center the title */
+}
+
+.card-header.rotate-left {
+  /* Rotate the title -90 degrees to the left */
+  transform: rotate(-90deg);
+  transform-origin: center; /* Ensure rotation is around the center */
+}
+
+.card-body {
+  font-size: 1rem;
+  display: block; /* Make sure the content is visible when selected */
+}

@@ -7,7 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" style={{ width: '100%' }}>
+    <Navbar expand="lg" className="bg-dark" style={{ width: '100%' }}>
       <Container fluid>
         <Navbar.Brand href="#" style={{ fontSize: '80%' }}>
           Navbar scroll

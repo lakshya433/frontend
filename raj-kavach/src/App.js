@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import NavScrollExample from './components/navbar';
 import Footer from './components/Footer';
+import Card from './components/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
-  const [selectedBox, setSelectedBox] = useState(null);
+  const [selectedCard, setSelectedCard] = useState(null);
 
-  const handleBoxClick = (boxNumber) => {
-    setSelectedBox(boxNumber);
-  };
+  const handleCardSelect = (cardNumber) => {
+    setSelectedCard(cardNumber);
+  }
 
   return (
     <div className="app-container">
@@ -18,16 +19,24 @@ function App() {
       </div>
 
       <div className="main-content-wrapper">
-        {[1, 2, 3, 4].map((boxNumber) => (
-          <div
-            key={boxNumber}
-            className={`content-box ${selectedBox === boxNumber ? 'selected' : ''}`}
-            onClick={() => handleBoxClick(boxNumber)}
-          >
-            <div className="content-box-text">Box {boxNumber}</div>
-          </div>
+        {[1, 2, 3, 4].map((cardNumber) => (
+          <Card 
+            key={cardNumber} 
+            title={`Card ${cardNumber}`} 
+            content={`Content for card ${cardNumber}`} 
+            className={selectedCard === cardNumber ? 'main-card' : 'side-card'}
+            onClick={() => handleCardSelect(cardNumber)}
+            selected={selectedCard === cardNumber}
+          />
         ))}
-        <div className="main-content-box">Main Content Box</div>
+
+        <Card 
+          title="Main Card" 
+          content="This is the main card." 
+          className={selectedCard === null ? 'main-card' : 'side-card'} 
+          onClick={() => handleCardSelect(null)}
+          selected={selectedCard === null}
+        />
       </div>
 
       <Footer />

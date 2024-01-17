@@ -11,15 +11,17 @@
 
 /* Footer styles */
 .footer {
-  background-color: #f8f9fa;
+  background-color: #2d2d2d;
   text-align: center;
   padding: 20px 0;
   position: relative;
   bottom: 0;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .footer-content {
+  color: azure;
   max-width: 1140px;
   margin: 0 auto;
 }
