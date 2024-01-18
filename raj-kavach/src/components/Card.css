@@ -1,21 +1,27 @@
 .card {
-  border: 1px solid #ddd;
-  background-color: #fff;
+  border: 1px solid #000000;
+  background-color: #000000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   overflow: hidden; /* Hide overflow content */
-}
-
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1; /* Allow cards to grow equally within flex container */
+  flex-grow: 0; /* Prevent the card from growing */
+  flex-shrink: 0; /* Prevent the card from shrinking */
+  flex-basis: 10%; /* Set the base size to 10% */
+  transition: flex-basis 0.3s ease-in-out; /* Animate the flex-basis change */
 }
 
 .card.selected {
   border: 2px solid blue;
+  flex-basis: 60%; /* Set width for selected card */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
@@ -25,21 +31,27 @@
   align-self: center;
 }
 
-.card-header.rotate-left {
-  transform: rotate(-90deg);
-  transform-origin: center;
-}
-
 .card-body {
   font-size: 1rem;
+  color: #99999d;
+  padding: 0 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
   display: none; /* Hide content by default */
 }
 
 .card.selected .card-body,
 .side-card.selected .card-body {
-  display: block; /* Show content when card is selected */
+  display: block; /* Show content for the selected card */
+  color: #ffffff; /* Text color for selected card content */
 }
 
+.card.selected .card-body {
+  display: block; /* Show content for the selected card */
+  /* ... other styles */
+}
+
+/* Updated .notification styles */
 .notification {
   display: flex;
   flex-direction: column;
@@ -54,6 +66,10 @@
   font-size: 16px;
   --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
   --color: #32a6ff;
+
+  /* Updated styles for notification */
+  margin: 10px; /* Add margin for spacing */
+  cursor: pointer; /* Add cursor style for interaction */
 }
 
 .notification:before,
@@ -91,8 +107,11 @@
 .notification:hover .notititle {
   transform: translateX(0.15rem);
 }
-
 .notibody {
+  display: none;
+}
+.card.selected .notibody {
+  display: block;
   color: #99999d;
   padding: 0 1.25rem;
   transition: transform 300ms ease;
@@ -127,11 +146,3 @@
 .notification:hover .notiborderglow {
   opacity: 0.1;
 }
-
-/* Additional styling for home cards */
-.home-card {
-  background-color: #f3f3f3;
-  border: 1px solid #ccc;
-}
-
-/* Additional global styles, if any */

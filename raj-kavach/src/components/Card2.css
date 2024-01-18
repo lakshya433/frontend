@@ -1,0 +1,17 @@
+.card2 {
+  /* Placeholder style */
+  min-height: 100px;
+}
+
+.card2.selected {
+  border: 2px solid blue;
+}
+
+.card2.special {
+  width: 60%;
+}
+
+.card {
+  width: 10%;
+  /* Other common styles for cards */
+}

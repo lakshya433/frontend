@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCard, setSelectedCard] = useState(4); // Default selected card is card 5 (index 4)
 
   const handleCardSelect = (cardNumber) => {
     setSelectedCard(cardNumber);
@@ -16,7 +16,8 @@ function App() {
     "Url Query Check/Report",
     "Phone No. Query/Report",
     "Feedback/Suggestions from User",
-    "Recent Cyber Crimes"
+    "Recent Cyber Crimes",
+    "Home"
   ];
 
   return (
@@ -31,19 +32,10 @@ function App() {
             key={index} 
             title={title} 
             content={`Content for ${title}`} 
-            className={selectedCard === index ? 'main-card' : 'side-card'}
             onClick={() => handleCardSelect(index)}
-            selected={selectedCard === index}
+            className={selectedCard === index ? 'card selected' : 'card'}
           />
         ))}
-
-        <Card 
-          title="Home" 
-          content="Suraksha Kavach, your reliable shield against online threats. In an era where online scams and phishing attempts are rampant, Suraksha Kavach is here to equip users like you with the tools and knowledge needed to identify and steer clear of deceptive websites." 
-          className={selectedCard === null ? 'main-card' : 'side-card'} 
-          onClick={() => handleCardSelect(null)}
-          selected={selectedCard === null}
-        />
       </div>
 
       <Footer />

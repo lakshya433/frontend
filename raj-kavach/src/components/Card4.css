@@ -1,0 +1,8 @@
+.card4 {
+  /* Placeholder style */
+  min-height: 100px;
+}
+
+.card4.selected {
+  border: 2px solid blue;
+}
