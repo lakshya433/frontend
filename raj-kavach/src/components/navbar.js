@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavScrollExample() {
+  const refreshPage = () => {
+    window.location.reload();}
   return (
     <Navbar expand="lg" className="navbar-dark bg-dark" style={{ width: '100%' }}>
       <Container fluid>
@@ -19,7 +21,7 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href="#" onClick={refreshPage}>Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
