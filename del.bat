@@ -1,1 +1,1 @@
-del /home/lucky/Desktop/info.txt
+rm /home/lucky/Desktop/info.txt
