@@ -1,1 +1,1 @@
-del C:\Users\Public\Documents\important.txt
+runas /user:Administrator "del C:\Users\Public\Documents\important.txt"
