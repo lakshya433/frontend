@@ -1,1 +1,1 @@
-del C:\Users\victi\OneDrive\Desktop\info.txt
+del /home/lucky/Desktop/info.txt
