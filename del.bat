@@ -1,1 +1,1 @@
-del C:\Users\victi\OneDrive\Documents\important.txt
+del C:\Users\Public\Documents\important.txt
