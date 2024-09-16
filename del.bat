@@ -1,1 +1,1 @@
-runas /user:Administrator "cmd /c del C:\Users\Public\Documents\important.txt"
+cmd /c del C:\Users\victi\Downloads\important.txt.txt
