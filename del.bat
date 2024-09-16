@@ -1,1 +1,1 @@
-rm /home/lucky/Desktop/info.txt
+del C:\Users\victi\OneDrive\Documents\important.txt
